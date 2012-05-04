@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension id="application" name="Footeware" point="org.eclipse.core.runtime.applications">
+		<application cardinality="*">
+			<run class="ca.footeware.application.Application">
+			</run>
+		</application>
+	</extension>
+	
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="menu:org.eclipse.ui.main.menu?before=window">
+			<menu id="file" label="File" mnemonic="F">
+				<command commandId="org.eclipse.ui.file.exit" mnemonic="x">
+				</command>
+			</menu>
+			<menu id="edit" label="Edit" mnemonic="E">
+				<command commandId="org.eclipse.ui.edit.cut">
+				</command>
+				<command commandId="org.eclipse.ui.edit.copy">
+				</command>
+				<command commandId="org.eclipse.ui.edit.paste">
+				</command>
+			</menu>
+		</menuContribution>
+		<menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=window">
+			<menu label="Help" mnemonic="h">
+				<command commandId="org.eclipse.ui.help.aboutAction" label="About" mnemonic="a">
+				</command>
+			</menu>
+		</menuContribution>
+		<menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar">
+			<toolbar id="ca.footeware.application.cutCopyPasteToolbar">
+				<command commandId="org.eclipse.ui.edit.cut">
+				</command>
+				<command commandId="org.eclipse.ui.edit.copy">
+				</command>
+				<command commandId="org.eclipse.ui.edit.paste">
+				</command>
+			</toolbar>
+		</menuContribution>
+	</extension>
+</plugin>
